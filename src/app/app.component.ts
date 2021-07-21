@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { InfoPaginaService } from './services/info-pagina.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'portafolio';
+
+
+    // creamos constructor para llamar ala paginaservicie alla cargamos la info del seervicio json
+    constructor( public infoPaginaServicio: InfoPaginaService){
+
+
+    }
+
 }

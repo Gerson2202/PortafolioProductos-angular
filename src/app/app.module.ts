@@ -10,11 +10,13 @@ import { PortafolioComponent } from './pagues/portafolio/portafolio.component';
 import { AboutComponent } from './pagues/about/about.component';
 import { ItemComponent } from './pagues/item/item.component';
 import { AppRoutinModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http'; //ESTE TOCO MANUAL PARA LOS SERVICIOS
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    HeaderComponent,  
     FooterComponent,
     PortafolioComponent,
     AboutComponent,
@@ -22,7 +24,8 @@ import { AppRoutinModule } from './app-routing.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutinModule
+    AppRoutinModule,
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
