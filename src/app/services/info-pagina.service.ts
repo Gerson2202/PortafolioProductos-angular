@@ -11,19 +11,48 @@ export class InfoPaginaService {
   info: InfoPagina = {};
   cargada = false;
 
+  // pripiedad de equipos firebase
+  equipo: any []=[];
+
 
   constructor( private http: HttpClient) {
  
     // console.log('servicio de pagina lista');
-
+    // para que me lea el private lo coloco aca 
+      this.cargarInfo();
+      this.cargarEquipo();
     // Leer el archivo JSONC
+    // this.http.get('assets/data/data-pagina.json')
+    // .subscribe( (resp: InfoPagina)=> {
+    //   this.cargada= true;
+    //   this.info = resp;
+    //   console.log(resp);
+      
+    // });
+
+   }
+
+  //   DESDE NO STRAEMOS LA INFO :CARGAMOS INFOR DEL FIREBASE
+  private cargarInfo()
+  {
+
     this.http.get('assets/data/data-pagina.json')
     .subscribe( (resp: InfoPagina)=> {
       this.cargada= true;
       this.info = resp;
       console.log(resp);
       
-    });
+    });   
+  }
+  // CARGAR EQUIPO
+  private cargarEquipo()
+  {
 
-   }
+    this.http.get('https://angular-protafolio-b47d1-default-rtdb.firebaseio.com/equipo.json')
+    .subscribe( (resp: any)=> {     
+      this.equipo = resp;
+      console.log(resp);
+      
+    });   
+  }
 }
