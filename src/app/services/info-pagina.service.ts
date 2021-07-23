@@ -40,7 +40,7 @@ export class InfoPaginaService {
     .subscribe( (resp: InfoPagina)=> {
       this.cargada= true;
       this.info = resp;
-      console.log(resp);
+      // console.log(resp);
       
     });   
   }
@@ -51,7 +51,7 @@ export class InfoPaginaService {
     this.http.get('https://angular-protafolio-b47d1-default-rtdb.firebaseio.com/equipo.json')
     .subscribe( (resp: any)=> {     
       this.equipo = resp;
-      console.log(resp);
+      // console.log(resp);
       
     });   
   }
