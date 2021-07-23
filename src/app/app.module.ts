@@ -10,7 +10,8 @@ import { PortafolioComponent } from './pagues/portafolio/portafolio.component';
 import { AboutComponent } from './pagues/about/about.component';
 import { ItemComponent } from './pagues/item/item.component';
 import { AppRoutinModule } from './app-routing.module';
-import { HttpClientModule } from '@angular/common/http'; //ESTE TOCO MANUAL PARA LOS SERVICIOS
+import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './pagues/search/search.component'; //ESTE TOCO MANUAL PARA LOS SERVICIOS
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http'; //ESTE TOCO MANUAL PARA
     FooterComponent,
     PortafolioComponent,
     AboutComponent,
-    ItemComponent
+    ItemComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
- import { Producto } from '../interfaces/producto.interface';
+import { Producto } from '../interfaces/producto.interface';
 
 
 @Injectable({
@@ -10,6 +10,7 @@ export class ProductosService {
   // inicia la clase
   cargando= true;
   productos: any []=[];
+  // infoProductos: any []=[];
 
   // 1. paso : importar el hhtpClienta
   // 2. paso : creamos el private cargar productos agragamos la ruta de firebase con su .JSON
@@ -24,8 +25,7 @@ export class ProductosService {
    this.Http.get('https://angular-protafolio-b47d1-default-rtdb.firebaseio.com/procuctos_idx.json')
    .subscribe( (resp :any )=>{
       console.log(resp);
-      this.cargando = false;
-     
+      this.cargando = false;     
        this.productos =resp;
 
       //  setTimeout(()=>{
@@ -33,5 +33,8 @@ export class ProductosService {
       //  },20000);
    });
 
+  }
+  getPrducto(id: string){
+   return this.Http.get(`https://angular-protafolio-b47d1-default-rtdb.firebaseio.com/procuctos/${ id }.json`)
   }
 }
